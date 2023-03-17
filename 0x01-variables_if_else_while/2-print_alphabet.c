@@ -10,9 +10,10 @@ int main(void)
 
 	while (i <= 122)
 	{
-		printf("%c", i);
+		putchar(i);
 		i++;
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
+
