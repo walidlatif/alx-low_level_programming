@@ -1,5 +1,8 @@
-#include<stdio.h>
 #include "main.h"
+
+/**
+ * print all alphabets in lowercase
+ */
 
 void print_alphabet(void)
 {
@@ -7,8 +10,8 @@ void print_alphabet(void)
 
 	for (c = 97; c <= 122; c++)
 	{
-		putchar(c);
+		_putchar(c);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
 
