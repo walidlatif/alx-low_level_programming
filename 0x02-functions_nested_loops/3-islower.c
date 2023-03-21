@@ -1,7 +1,14 @@
 #include "main.h"
 #include<ctype.h>
 
-int _islower(int c){
+/**
+ * _islower - checks for lowercase character.
+ * @c: the character to be chaked
+ * Return: 1 for lowercase otherwise 0
+ */
+
+int _islower(int c)
+{
 	if (islower(c))
 	{
 		return (1);
@@ -11,3 +18,4 @@ int _islower(int c){
 		return (0);
 	}
 }
+
