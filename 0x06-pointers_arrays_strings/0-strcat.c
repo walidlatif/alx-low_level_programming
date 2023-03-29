@@ -4,9 +4,9 @@
 /**
  * _strcat - concatenates two strings.
  *
- * @dest: char passed
+ * @dest: string passed
  *
- * @src: char passed
+ * @src: string passed
  *
  * Return: dest.
  */
