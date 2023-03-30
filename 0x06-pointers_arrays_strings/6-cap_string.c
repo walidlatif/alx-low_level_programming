@@ -20,11 +20,8 @@ char *cap_string(char *str)
 		if (strchr(del, str[i]))
 		{
 			str[i + 1] = toupper(str[i + 1]);
-				if (str[i] == '\t')
-			{
-				str[i] = ' ';
-			}
 		}
 	}
 	return (str);
 }
+
