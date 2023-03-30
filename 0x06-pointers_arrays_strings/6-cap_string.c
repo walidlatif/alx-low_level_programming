@@ -17,7 +17,7 @@ char *cap_string(char *str)
 
 	for (i = 0; i <= strlen(str); i++)
 	{
-		if(str[i] == '\t')
+		if (str[i] == '\t')
 		{
 			str[i] = ' ';
 		}
