@@ -10,9 +10,9 @@
 
 char *leet(char *s)
 {
-	 size_t i;
+	int i;
 
-	for (i = 0; i <= strlen(s); i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == 'a' || s[i] == 'A')
 		{
