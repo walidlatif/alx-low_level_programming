@@ -1,0 +1,22 @@
+#include "main.h"
+#include <string.h>
+
+/**
+ * *_memcpy - copies memory area.
+ *
+ * @dest: A pointer to the destination memory
+ * location where the memory is to be copied.
+ *
+ * @src: A pointer to the source memory location
+ * from where the memory is to be copied.
+ *
+ * @n: The number of bytes to be copied.
+ *
+ * Return: dest
+ */
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	memcpy(dest, src, n);
+	return (dest);
+}
