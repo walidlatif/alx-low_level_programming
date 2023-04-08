@@ -11,26 +11,22 @@
  * Return: res a pointer to the first occurrence
  */
 
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
-	int i;
-	int j;
-	int found;
+	int i = 0, j = 0;
 
-	i = 0;
-	while (s[i])
+	while (haystack[i])
 	{
-		j = 0;
-		found = 0;
-		while (accept[j])
+		while (needle[j])
 		{
-			if (s[i] == accept[j])
-				found = 1;
+			if (haystack[i + j] != needle[j])
+				break;
 			j++;
 		}
-		if (found == 1)
-			return (s + i);
+		if (!needle[j])
+			return (&haystack[i]);
 		i++;
 	}
 	return (NULL);
 }
+
