@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+
 
 /**
  * *_strspn - locates a character in a string.
@@ -14,8 +14,30 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int nb;
+	int i;
+	int j;
+	int k;
 
-	nb = strspn(s, accept);
-	return (nb);
+
+	k = 0;
+	j = 0;
+	i = 0;
+	while (s[i])
+	{
+		j = 0;
+		k = 0;
+		while (accept[j])
+		{
+			if (accept[j] == s[i])
+			{
+				k = 1;
+			}
+			j++;
+		}
+		if (k == 0)
+			return (i);
+		i++;
+	}
+	return (i);
 }
+
