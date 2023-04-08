@@ -1,37 +1,24 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * *_strpbrk - locates a character in a string.
- *
- * @s: the string to be searched
- *
- * @accept: the set of characters to search for.
- *
- * Return: nb a pointer to the first occurrence of any character
- */
+ * _strpbrk - Entry point
+ * @s: input
+ * @accept: input
+ * Return: Always 0 (Success)
+*/
 
 char *_strpbrk(char *s, char *accept)
 {
-	int i;
-	int j;
-	int found;
+	int k;
 
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		j = 0;
-		found = 0;
-		while (accept[j])
+		for (k = 0; accept[k]; k++)
 		{
-			if (s[i] == accept[j])
-				found = 1;
-			j++;
+		if (*s == accept[k])
+		return (s);
 		}
-		if (found == 1)
-			return (s + i);
-		i++;
+	s++;
 	}
-	return (NULL);
+return ('\0');
 }
-
