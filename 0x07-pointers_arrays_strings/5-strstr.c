@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * *_strstr - locates a substring.
@@ -11,10 +10,26 @@
  * Return: res a pointer to the first occurrence
  */
 
-char *_strstr(char *haystack, char *needle)
+char *_strpbrk(char *s, char *accept)
 {
-	char *res;
+	int i;
+	int j;
+	int found;
 
-	res = strstr(haystack, needle);
-	return (res);
+	i = 0;
+	while (s[i])
+	{
+		j = 0;
+		found = 0;
+		while (accept[j])
+		{
+			if (s[i] == accept[j])
+				found = 1;
+			j++;
+		}
+		if (found == 1)
+			return (s + i);
+		i++;
+	}
+	return (NULL);
 }
