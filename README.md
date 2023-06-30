@@ -26,6 +26,17 @@ You must first write to your Terminal `./` Following the name of the file you wa
 5|[0x05-pointers_arrays_strings](./0x05-pointers_arrays_stringss)| Pointers, arrays and strings.
 6|[0x06-pointers_arrays_strings](./0x06-pointers_arrays_stringss)| More pointers, arrays and strings.
 7|[0x07-pointers_arrays_strings](./0x07-pointers_arrays_stringss)| Even more pointers, arrays and strings.
+8|[0x08-recursion](./0x08-recursion)| Recursion
+9|[0x09-static_libraries](./0x09-static_libraries)| Static libraries.
+A|[0x0A-argc_argv](./0x0A-argc_argv)| argc, argv.
+B|[0x0B-malloc_free](./0x0B-malloc_free)| malloc, free.
+C|[0x0C-more_malloc_free](./0x0C-more_malloc_free)| More malloc, free.
+D|[0x0D-preprocessor](./0x0D-preprocessor)| Preprocessor.
+E|[0x0E-structures_typedef](./0x0E-structures_typedef)| Structures, typedef.
+F|[0x0F-function_pointers](./0x0F-function_pointers)| Function pointers.
+10|[0x10-variadic_functions](./0x10-variadic_functions)| Variadic functions.
+
+
 
 
 
