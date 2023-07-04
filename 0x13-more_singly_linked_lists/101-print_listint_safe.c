@@ -1,62 +1,33 @@
 #include "lists.h"
 
-size_t count_nodes(const listint_t *head);
-
 /**
- * count_nodes - Counts the number of nodes in a linked list
- * @head: Pointer to the head node of the list
+ * print_listint_safe - Prints a linked list in safe mode
+ * @head: Pointer to the beginning of the linked list
  *
- * Return: Number of nodes in the list
+ * Return: The number of nodes in the list
  */
-
-size_t count_nodes(const listint_t *head)
+size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 0;
+	size_t ctr = 0;
+
+	if (head == NULL)
+		return (0);
 
 	while (head != NULL)
 	{
-		count++;
-		head = head->next;
-	}
+		printf("[%p] %d\n", (void *)head, head->n);
+		ctr++;
 
-	return (count);
-}
-
-/**
- * print_listint_safe - Prints a linked list, even if it has a loop
- * @head: Pointer to the head node of the list
- *
- * Return: Number of nodes in the list
- */
-
-size_t print_listint_safe(const listint_t *head)
-{
-	size_t count = 0;
-	const listint_t *current = head, *loop_node = NULL;
-
-	while (current != NULL)
-	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		count++;
-
-		if (current >= current->next)
+		if (head > head->next)
 		{
-			loop_node = current->next;
-			while (loop_node >= current)
-			{
-				count++;
-				printf("[%p] %d\n", (void *)loop_node, loop_node->n);
-				if (loop_node == current)
-					break;
-				loop_node = loop_node->next;
-			}
+			head = head->next;
+		}
+		else
+		{
+			head = head->next;
+			printf("-> [%p] %d\n", (void *)head, head->n);
 			break;
 		}
-		current = current->next;
 	}
-
-	printf("-> [%p] %d\n", (void *)current, current->n);
-	count++;
-
-	return (count);
+	return (ctr);
 }
