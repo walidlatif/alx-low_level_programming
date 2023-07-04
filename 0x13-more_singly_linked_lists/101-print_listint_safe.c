@@ -1,66 +1,62 @@
 #include "lists.h"
-#include <stdlib.h>
+
+size_t count_nodes(const listint_t *head);
 
 /**
- * find_listint_loop_fl - finds a loop in a linked list
+ * count_nodes - Counts the number of nodes in a linked list
+ * @head: Pointer to the head node of the list
  *
- * @head: linked list to search
- *
- * Return: address of node where loop starts/returns, NULL if no loop
+ * Return: Number of nodes in the list
  */
-listint_t *find_listint_loop_fl(listint_t *head)
+
+size_t count_nodes(const listint_t *head)
 {
-	listint_t *ptr, *end;
+	size_t count = 0;
 
-	if (head == NULL)
-		return (NULL);
-
-	for (end = head->next; end != NULL; end = end->next)
+	while (head != NULL)
 	{
-		if (end == end->next)
-			return (end);
-		for (ptr = head; ptr != end; ptr = ptr->next)
-			if (ptr == end->next)
-				return (end->next);
+		count++;
+		head = head->next;
 	}
-	return (NULL);
+
+	return (count);
 }
 
 /**
- * free_listint_safe - frees a listint list, even if it has a loop
+ * print_listint_safe - Prints a linked list, even if it has a loop
+ * @head: Pointer to the head node of the list
  *
- * @h: head of list
- *
- * Return: number of nodes freed
+ * Return: Number of nodes in the list
  */
-size_t free_listint_safe(listint_t **h)
+
+size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *next, *loopnode;
-	size_t len;
-	int loop = 1;
+	size_t count = 0;
+	const listint_t *current = head, *loop_node = NULL;
 
-	if (h == NULL || *h == NULL)
-		return (0);
-
-	loopnode = find_listint_loop_fl(*h);
-	for (len = 0; (*h != loopnode || loop) && *h != NULL; *h = next)
+	while (current != NULL)
 	{
-		len++;
-		next = (*h)->next;
-		if (*h == loopnode && loop)
+		printf("[%p] %d\n", (void *)current, current->n);
+		count++;
+
+		if (current >= current->next)
 		{
-			if (loopnode == loopnode->next)
+			loop_node = current->next;
+			while (loop_node >= current)
 			{
-				free(*h);
-				break;
+				count++;
+				printf("[%p] %d\n", (void *)loop_node, loop_node->n);
+				if (loop_node == current)
+					break;
+				loop_node = loop_node->next;
 			}
-			len++;
-			next = next->next;
-			free((*h)->next);
-			loop = 0;
+			break;
 		}
-		free(*h);
+		current = current->next;
 	}
-	*h = NULL;
-	return (len);
+
+	printf("-> [%p] %d\n", (void *)current, current->n);
+	count++;
+
+	return (count);
 }
