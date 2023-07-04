@@ -1,12 +1,12 @@
-![C Progr](https://user-images.githubusercontent.com/125874545/226924053-bd9423a6-6b45-455a-b379-3dc084da0fd2.png)
+![C Progr]([https://user-images.githubusercontent.com/125874545/226924053-bd9423a6-6b45-455a-b379-3dc084da0fd2.png])
 
 # Low-level programming & Algorithm - Hatching out
 
-_In this repository you will find different folders which contain C-Programming executable files, to have some hint for the beginners._
+_In this repository you will find different folders containing C-Programming executable files, with some hints for beginners._
 
 ## How to execute the files?
 
-You must first write to your Terminal `./` Following the name of the file you want to run.
+You must first write to your Terminal `./` Following the file name you want to run.
 
 ### Example:
 ```
@@ -35,6 +35,7 @@ D|[0x0D-preprocessor](./0x0D-preprocessor)| Preprocessor.
 E|[0x0E-structures_typedef](./0x0E-structures_typedef)| Structures, typedef.
 F|[0x0F-function_pointers](./0x0F-function_pointers)| Function pointers.
 10|[0x10-variadic_functions](./0x10-variadic_functions)| Variadic functions.
+12|[0x12-singly_linked_lists](./0x12-singly_linked_lists)| Singly-linked lists.
 
 
 
