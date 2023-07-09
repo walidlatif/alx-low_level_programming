@@ -4,29 +4,35 @@
  * main - prints all possible different combinations of three digits
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int n, m, s;
+	int i = 0;
+	int j = 1;
+	int k = 2;
 
-	for (n = 48; n < 58; n++)
+	while (i <= 7)
 	{
-		for (m = 49; m < 58; m++)
+		while (j <= 8)
 		{
-			for (s = 50; s < 58; s++)
+			while (k <= 9)
 			{
-				if (s > m && m > n)
+				putchar(i + '0');
+				putchar(j + '0');
+				putchar(k + '0');
+				k++;
+				if (i != 7)
 				{
-					putchar(n);
-					putchar(m);
-					putchar(s);
-					if (n != 55 || m != 56)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(',');
+					putchar(' ');
 				}
+
 			}
+			j++;
+			k = j + 1;
 		}
+		j = i + 1;
+		i++;
 	}
 	putchar('\n');
 	return (0);
